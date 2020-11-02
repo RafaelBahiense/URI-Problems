@@ -64,7 +64,7 @@ def pnt2seg(pnt, start, end):
 
 T = int(input())  # Obtém o numero de casos de teste e converte a entrada para 
 for _ in range(T): # Loop de entradas até o numero de casos desejado
-    # Um dicionário com as magias e seus danos e raios
+    # Um dicionário com as magias, seus danos e raios
     magic_dic = {'fire': [200, 20, 30, 50], 'water': [300, 10, 25, 40], 'earth': [400, 25, 55, 70], 'air': [100, 18, 38, 60]}
     # Limpeza das listas só pra garantir
     dimen = []
@@ -101,10 +101,10 @@ for _ in range(T): # Loop de entradas até o numero de casos desejado
             SegCD_P = pnt2seg((cx, cy), (x3, y3), (x4, y4))
             SegAD_P = pnt2seg((cx, cy), (x1, y1), (x4, y4))
             menor_dist_P = min(SegAB_P[0], SegBC_P[0], SegCD_P[0], SegAD_P[0])
-    # Verifica se a menor distância é igual ou menor que o raio,
-    # caso positivo então a unidade foi atingida
-    if menor_dist_P <= r:
-        print(magic_dic[magic[0]][0])
-    # Caso contrário o ataque não acertou
-    else:
-        print('0')
+        # Verifica se a menor distância é igual ou menor que o raio,
+        # caso positivo então a unidade foi atingida
+        if menor_dist_P <= r:
+            print(magic_dic[magic[0]][0])
+        # Caso contrário o ataque não acertou
+        else:
+            print('0')
